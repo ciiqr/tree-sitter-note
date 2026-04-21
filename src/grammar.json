@@ -10,43 +10,56 @@
       }
     },
     "_line": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "comment"
+          "type": "PATTERN",
+          "value": "[ \\t]*"
         },
         {
-          "type": "SYMBOL",
-          "name": "section"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "comment"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "section"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "done"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "todo"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "question"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "partial"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "important"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "urgent"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "plain"
+            }
+          ]
         },
         {
-          "type": "SYMBOL",
-          "name": "done"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "todo"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "question"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "partial"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "important"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "urgent"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "plain"
+          "type": "STRING",
+          "value": "\n"
         }
       ]
     },
@@ -59,20 +72,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "#"
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -87,20 +92,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "% "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -115,20 +112,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "x "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -143,20 +132,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "- "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -171,20 +152,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "? "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -199,20 +172,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "~ "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -227,20 +192,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "! "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -255,20 +212,12 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
               "type": "STRING",
               "value": "!! "
             },
             {
               "type": "PATTERN",
               "value": "[^\\n]*"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
             }
           ]
         }
@@ -280,21 +229,8 @@
         "type": "PREC",
         "value": 1,
         "content": {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "PATTERN",
-              "value": "[ \\t]*"
-            },
-            {
-              "type": "PATTERN",
-              "value": "[^\\n]+"
-            },
-            {
-              "type": "STRING",
-              "value": "\n"
-            }
-          ]
+          "type": "PATTERN",
+          "value": "[^\\n]+"
         }
       }
     }
