@@ -1,0 +1,8 @@
+[settings]
+status.missing_tools = "always"
+
+[env]
+_.path = ["./node_modules/.bin"]
+
+[tools]
+node = "20.20.2"

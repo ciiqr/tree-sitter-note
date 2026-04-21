@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "note",
+      "camelcase": "Note",
+      "title": "Note",
+      "scope": "source.note",
+      "file-types": [
+        "txt",
+        "todo"
+      ],
+      "injection-regex": "^note$",
+      "class-name": "TreeSitterNote"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "note syntax by ciiqr",
+    "authors": [
+      {
+        "name": "ciiqr",
+        "url": ""
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/ciiqr/tree-sitter-note",
+      "funding": ""
+    }
+  },
+  "bindings": {
+    "c": false,
+    "go": false,
+    "java": false,
+    "node": true,
+    "python": false,
+    "rust": false,
+    "swift": false,
+    "zig": false
+  }
+}
