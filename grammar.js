@@ -5,7 +5,7 @@ export default grammar({
   name: "note",
 
   rules: {
-    source_file: ($) => repeat($._line),
+    source_file: ($) => repeat(choice($._line, $.code_block)),
 
     _line: ($) =>
       seq(
@@ -31,7 +31,24 @@ export default grammar({
     question:  () => token(prec(2, seq("? " , /[^\n]*/))),
     partial:   () => token(prec(2, seq("~ " , /[^\n]*/))),
     important: () => token(prec(2, seq("! " , /[^\n]*/))),
-    urgent:    () => token(prec(3, seq("!! ", /[^\n]*/))), // higher than !
+    urgent:    () => token(prec(2, seq("!! ", /[^\n]*/))),
+
+    // fallback to plain
     plain:     () => token(prec(1, /[^\n]+/)), // lower than everything else
-  }
+
+    // code blocks
+    code_block: ($) =>
+      seq(
+        $.code_fence_start,
+        optional($.code_language),
+        "\n",
+        repeat(seq($.code_line, "\n")),
+        $.code_fence_end,
+        optional("\n"),
+      ),
+    code_fence_start: ($) => token(prec(2, "```")),
+    code_language: () => /[^\n]+/,
+    code_fence_end: () => token(prec(2, "```")),
+    code_line: () => /[^\n]+/,
+  },
 });

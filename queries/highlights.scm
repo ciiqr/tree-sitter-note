@@ -7,3 +7,9 @@
 (partial) @constant
 (important) @keyword
 (urgent) @invalid
+
+; code block
+(code_fence_start) @punctuation.delimiter
+(code_fence_end)   @punctuation.delimiter
+(code_language)    @label
+(code_line)        @string

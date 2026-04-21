@@ -7,3 +7,11 @@
     ~ things that are partially done but likely await some external force before being completed
     ! things that are important
     !! things that are urgent
+
+    ```js
+    console.log("we're in a code block"); 1
+    const don = { t: 1 };
+    const style = 1;
+    - don.t
+    ~ style;
+    ```
