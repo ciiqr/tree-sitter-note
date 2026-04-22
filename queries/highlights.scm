@@ -8,9 +8,7 @@
 (question)  @constant @note.question
 (partial)   @constant @note.partial
 (important) @keyword @note.important
-(urgent)    @invalid @note.urgent
-; TODO: consider alternatives to @invalid (preference may be different per-editor)
-; - @warning @markup.strong
+(urgent)    @keyword @note.urgent
 
 ; code block
 (code_fence_start) @punctuation.delimiter

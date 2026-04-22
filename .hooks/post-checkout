@@ -2,5 +2,5 @@
 
 set -e
 
-# hard link all queries over to zed repo
-cp -alf queries/. ../zed-note/languages/note/
+# copy all queries over to zed repo
+cp -af queries/. ../zed-note/languages/note/
