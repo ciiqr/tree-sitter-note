@@ -2,6 +2,7 @@
 
 ## setup
 ```bash
+git config --local core.hookspath .hooks
 mise trust --all
 npm i
 ```

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+# hard link all queries over to zed repo
+# TODO: zed-note
+cp -alf queries/. ../zed-ciiqr-note/languages/note/queries/

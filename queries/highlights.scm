@@ -1,10 +1,11 @@
-; DOCS: https://neovim.io/doc/user/treesitter/#treesitter-highlight-groups
+; DOCS:
+; - neovim: https://neovim.io/doc/user/treesitter/#treesitter-highlight-groups
+; - zed: https://zed.dev/docs/extensions/languages
 (comment)   @comment @note.comment
 (section)   @string @note.section
 (done)      @function @note.done
 (todo)      @variable.parameter @note.todo
-; TODO: why @function.special over @constant again?
-(question)  @function.special @note.question
+(question)  @constant @note.question
 (partial)   @constant @note.partial
 (important) @keyword @note.important
 (urgent)    @invalid @note.urgent
