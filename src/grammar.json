@@ -373,8 +373,11 @@
       }
     },
     "code_language": {
-      "type": "PATTERN",
-      "value": "[^\\n]+"
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[a-zA-Z0-9_+-]+"
+      }
     },
     "code_fence_end": {
       "type": "TOKEN",

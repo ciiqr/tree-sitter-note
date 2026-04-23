@@ -37,11 +37,6 @@
     "fields": {}
   },
   {
-    "type": "code_language",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "code_line",
     "named": true,
     "fields": {}
@@ -269,6 +264,10 @@
   {
     "type": "```",
     "named": false
+  },
+  {
+    "type": "code_language",
+    "named": true
   },
   {
     "type": "x ",

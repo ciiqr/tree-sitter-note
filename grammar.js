@@ -49,7 +49,7 @@ export default grammar({
         optional("\n"),
       ),
     code_fence_start: ($) => token(prec(2, "```")),
-    code_language: () => /[^\n]+/,
+    code_language: () => token(/[a-zA-Z0-9_+-]+/),
     code_fence_end: () => token(prec(2, "```")),
     code_line: () => /[^\n]+/,
   },
