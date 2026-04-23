@@ -9,6 +9,8 @@
 (partial)   @constant @note.partial
 (important) @keyword @note.important
 (urgent)    @keyword @note.urgent
+(raw_text)  @note.raw_text
+(plain)     @note.plain
 
 ; code block
 (code_fence_start) @punctuation.delimiter
