@@ -21,9 +21,11 @@ export default grammar({
           $.urgent,
           $.plain,
         ),
-        "\n",
+        $._newline,
       ),
 
+    // NOTE: we use a regex instead of a string literal because Zed's Syntax Tree renders literals directly, and the newline breaks it
+    _newline: () => /\n/,
     raw_text: () => /[^\n]+/,
 
     comment:   ($) => seq(token(prec(2, "#"  )), optional($.raw_text)),
@@ -43,8 +45,8 @@ export default grammar({
       seq(
         $.code_fence_start,
         optional($.code_language),
-        "\n",
-        repeat(seq($.code_line, "\n")),
+        $._newline,
+        repeat(seq($.code_line, $._newline)),
         $.code_fence_end,
         optional("\n"),
       ),
