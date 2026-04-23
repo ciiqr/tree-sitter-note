@@ -1,0 +1,51 @@
+===============================================================================
+Sample
+===============================================================================
+# it's a comment
+% section of things
+    x things that I've done
+        details
+    - things that I need to do
+    ? things that I've considered but am not sure about yet
+    ~ things that are partially done but likely await some external force before being completed
+    ! things that are important
+    !! things that are urgent
+
+    ```js
+    console.log("we're in a code block"); 1
+    const don = { t: 1 };
+    const style = 1;
+    - don.t
+    ~ style;
+    ```
+
+-------------------------------------------------------------------------------
+
+(source_file
+  (comment
+    (raw_text))
+  (section
+    (raw_text))
+  (done
+    (raw_text))
+  (plain
+    (raw_text))
+  (todo
+    (raw_text))
+  (question
+    (raw_text))
+  (partial
+    (raw_text))
+  (important
+    (raw_text))
+  (urgent
+    (raw_text))
+  (code_block
+    (code_fence_start)
+    (code_language)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_fence_end)))

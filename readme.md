@@ -14,7 +14,9 @@ tree-sitter generate
 
 ## test
 ```bash
-tree-sitter generate && diff sample-parsed.txt <(tree-sitter parse sample.txt --grammar-path .)
+tree-sitter generate
+diff sample-parsed.txt <(tree-sitter parse sample.txt --grammar-path .)
+tree-sitter test
 ```
 
 ## dev

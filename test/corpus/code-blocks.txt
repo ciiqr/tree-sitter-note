@@ -1,0 +1,75 @@
+===============================================================================
+Code Blocks
+===============================================================================
+% section of things
+    # normal code block (indented)
+    ```js
+    console.log("we're in a code block"); 1
+    const don = { t: 1 };
+    const style = 1;
+    - don.t
+    ~ style;
+    ```
+
+    # unspecified code block (indented)
+    ```
+    console
+    .log("don't parse me")
+    ```
+
+# normal code block
+```js
+console.log("we're in a code block"); 1
+const don = { t: 1 };
+const style = 1;
+- don.t
+~ style;
+```
+
+# unspecified code block
+```
+console
+.log("don't parse me")
+```
+
+-------------------------------------------------------------------------------
+
+(source_file
+  (section
+    (raw_text))
+  (comment
+    (raw_text))
+  (code_block
+    (code_fence_start)
+    (code_language)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_fence_end))
+  (comment
+    (raw_text))
+  (code_block
+    (code_fence_start)
+    (code_line)
+    (code_line)
+    (code_fence_end))
+  (comment
+    (raw_text))
+  (code_block
+    (code_fence_start)
+    (code_language)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_line)
+    (code_fence_end))
+  (comment
+    (raw_text))
+  (code_block
+    (code_fence_start)
+    (code_line)
+    (code_line)
+    (code_fence_end)))
