@@ -24,17 +24,19 @@ export default grammar({
         "\n",
       ),
 
-    comment:   () => token(prec(2, seq("#"  , /[^\n]*/))),
-    section:   () => token(prec(2, seq("% " , /[^\n]*/))),
-    done:      () => token(prec(2, seq("x " , /[^\n]*/))),
-    todo:      () => token(prec(2, seq("- " , /[^\n]*/))),
-    question:  () => token(prec(2, seq("? " , /[^\n]*/))),
-    partial:   () => token(prec(2, seq("~ " , /[^\n]*/))),
-    important: () => token(prec(2, seq("! " , /[^\n]*/))),
-    urgent:    () => token(prec(2, seq("!! ", /[^\n]*/))),
+    raw_text: () => /[^\n]+/,
+
+    comment:   ($) => seq(token(prec(2, "#"  )), optional($.raw_text)),
+    section:   ($) => seq(token(prec(2, "% " )), optional($.raw_text)),
+    done:      ($) => seq(token(prec(2, "x " )), optional($.raw_text)),
+    todo:      ($) => seq(token(prec(2, "- " )), optional($.raw_text)),
+    question:  ($) => seq(token(prec(2, "? " )), optional($.raw_text)),
+    partial:   ($) => seq(token(prec(2, "~ " )), optional($.raw_text)),
+    important: ($) => seq(token(prec(2, "! " )), optional($.raw_text)),
+    urgent:    ($) => seq(token(prec(2, "!! ")), optional($.raw_text)),
 
     // fallback to plain
-    plain:     () => token(prec(1, /[^\n]+/)), // lower than everything else
+    plain:     ($) => $.raw_text,
 
     // code blocks
     code_block: ($) =>

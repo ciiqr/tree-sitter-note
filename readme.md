@@ -16,3 +16,8 @@ tree-sitter generate
 ```bash
 tree-sitter generate && diff sample-parsed.txt <(tree-sitter parse sample.txt --grammar-path .)
 ```
+
+## dev
+```bash
+watchexec --watch grammar.js --shell sh --  'tree-sitter generate && tree-sitter parse sample.txt --grammar-path .'
+```
