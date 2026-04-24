@@ -73,8 +73,8 @@
       ]
     },
     "_newline": {
-      "type": "PATTERN",
-      "value": "\\n"
+      "type": "STRING",
+      "value": "\n"
     },
     "raw_text": {
       "type": "PATTERN",

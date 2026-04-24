@@ -25,7 +25,8 @@ export default grammar({
       ),
 
     // NOTE: we use a regex instead of a string literal because Zed's Syntax Tree renders literals directly, and the newline breaks it
-    _newline: () => /\n/,
+    // _newline: () => /\n/,
+    _newline: () => "\n",
     raw_text: () => /[^\n]+/,
 
     comment:   ($) => seq(token(prec(2, "#"  )), optional($.raw_text)),
