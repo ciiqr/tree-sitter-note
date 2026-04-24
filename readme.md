@@ -1,5 +1,7 @@
 # tree-sitter note syntax by ciiqr
 
+![sample](https://raw.githubusercontent.com/ciiqr/tree-sitter-note/main/images/sample.png)
+
 ## setup
 ```bash
 git config --local core.hookspath .hooks
