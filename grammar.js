@@ -25,6 +25,7 @@ export default grammar({
       ),
 
     // NOTE: we use a regex instead of a string literal because Zed's Syntax Tree renders literals directly, and the newline breaks it
+    // - https://github.com/zed-industries/zed/issues/54725
     _newline: () => /\n/,
     raw_text: () => /[^\n]+/,
 
