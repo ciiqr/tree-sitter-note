@@ -3,8 +3,8 @@
     x things that I've done
         details
     - things that I need to do
-    ? things that I've considered but am not sure about yet
-    ~ things that are partially done but likely await some external force before being completed
+    ~ things that are partially done
+    ? things that I'm not sure about yet
     ! things that are important
     !! things that are urgent
 

@@ -2,8 +2,7 @@
 
 note syntax by ciiqr
 
-<!-- TODO: need an updated sample png here -->
-![sample](https://raw.githubusercontent.com/ciiqr/vscode-extensions/main/packages/note-syntax/images/sample.png)
+![sample](https://raw.githubusercontent.com/ciiqr/tree-sitter-note/main/images/sample.png)
 
 ## File extensions
 

@@ -9,10 +9,10 @@
     (raw_text [3, 8] - [3, 15]))
   (todo [4, 4] - [4, 30]
     (raw_text [4, 6] - [4, 30]))
-  (question [5, 4] - [5, 59]
-    (raw_text [5, 6] - [5, 59]))
-  (partial [6, 4] - [6, 96]
-    (raw_text [6, 6] - [6, 96]))
+  (partial [5, 4] - [5, 36]
+    (raw_text [5, 6] - [5, 36]))
+  (question [6, 4] - [6, 40]
+    (raw_text [6, 6] - [6, 40]))
   (important [7, 4] - [7, 31]
     (raw_text [7, 6] - [7, 31]))
   (urgent [8, 4] - [8, 29]
