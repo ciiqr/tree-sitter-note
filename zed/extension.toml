@@ -1,0 +1,11 @@
+id = "note"
+name = "Note by ciiqr"
+description = "note syntax by ciiqr"
+repository = "https://github.com/ciiqr/zed-note"
+authors = ["ciiqr"]
+version = "1.0.0"
+schema_version = 1
+
+[grammars.note]
+repository = "https://github.com/ciiqr/tree-sitter-note"
+rev = "a718aba3b88e2a2215a489a3edd4e401cd0cd348"
