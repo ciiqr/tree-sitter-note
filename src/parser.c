@@ -21,7 +21,7 @@
 
 enum ts_symbol_identifiers {
   aux_sym_line_token1 = 1,
-  anon_sym_LF = 2,
+  aux_sym_line_token2 = 2,
   sym_source_file = 3,
   sym_line = 4,
   aux_sym_source_file_repeat1 = 5,
@@ -30,7 +30,7 @@ enum ts_symbol_identifiers {
 static const char * const ts_symbol_names[] = {
   [ts_builtin_sym_end] = "end",
   [aux_sym_line_token1] = "line_token1",
-  [anon_sym_LF] = "\n",
+  [aux_sym_line_token2] = "line_token2",
   [sym_source_file] = "source_file",
   [sym_line] = "line",
   [aux_sym_source_file_repeat1] = "source_file_repeat1",
@@ -39,7 +39,7 @@ static const char * const ts_symbol_names[] = {
 static const TSSymbol ts_symbol_map[] = {
   [ts_builtin_sym_end] = ts_builtin_sym_end,
   [aux_sym_line_token1] = aux_sym_line_token1,
-  [anon_sym_LF] = anon_sym_LF,
+  [aux_sym_line_token2] = aux_sym_line_token2,
   [sym_source_file] = sym_source_file,
   [sym_line] = sym_line,
   [aux_sym_source_file_repeat1] = aux_sym_source_file_repeat1,
@@ -54,8 +54,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = false,
     .named = false,
   },
-  [anon_sym_LF] = {
-    .visible = true,
+  [aux_sym_line_token2] = {
+    .visible = false,
     .named = false,
   },
   [sym_source_file] = {
@@ -97,13 +97,13 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 0:
       ACCEPT_TOKEN(aux_sym_line_token1);
       if (eof) ADVANCE(2);
-      if (lookahead == '\n') ADVANCE(7);
+      if (lookahead == '\n') ADVANCE(3);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') ADVANCE(3);
       if (lookahead != 0) ADVANCE(5);
       END_STATE();
     case 1:
-      if (lookahead == '\n') ADVANCE(8);
+      if (lookahead == '\n') ADVANCE(7);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(1);
       END_STATE();
@@ -112,7 +112,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 3:
       ACCEPT_TOKEN(aux_sym_line_token1);
-      if (lookahead == '\n') ADVANCE(7);
+      if (lookahead == '\n') ADVANCE(3);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') ADVANCE(3);
       if (lookahead != 0) ADVANCE(5);
@@ -140,14 +140,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           (lookahead < '\t' || '\r' < lookahead)) ADVANCE(5);
       END_STATE();
     case 7:
-      ACCEPT_TOKEN(anon_sym_LF);
+      ACCEPT_TOKEN(aux_sym_line_token2);
       if (lookahead == '\n') ADVANCE(7);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(3);
-      END_STATE();
-    case 8:
-      ACCEPT_TOKEN(anon_sym_LF);
-      if (lookahead == '\n') ADVANCE(8);
       END_STATE();
     default:
       return false;
@@ -168,7 +162,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(0)] = {
     [ts_builtin_sym_end] = ACTIONS(1),
     [aux_sym_line_token1] = ACTIONS(1),
-    [anon_sym_LF] = ACTIONS(1),
+    [aux_sym_line_token2] = ACTIONS(1),
   },
   [STATE(1)] = {
     [sym_source_file] = STATE(6),
@@ -198,7 +192,7 @@ static const uint16_t ts_small_parse_table[] = {
       aux_sym_line_token1,
   [5] = 1,
     ACTIONS(16), 1,
-      anon_sym_LF,
+      aux_sym_line_token2,
   [9] = 1,
     ACTIONS(18), 1,
       ts_builtin_sym_end,

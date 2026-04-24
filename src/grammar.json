@@ -17,8 +17,8 @@
           "value": "[^\\n]*"
         },
         {
-          "type": "STRING",
-          "value": "\n"
+          "type": "PATTERN",
+          "value": "\\n"
         }
       ]
     }
