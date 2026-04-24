@@ -8,4 +8,4 @@ schema_version = 1
 
 [grammars.note]
 repository = "https://github.com/ciiqr/tree-sitter-note"
-rev = "a718aba3b88e2a2215a489a3edd4e401cd0cd348"
+rev = "7979db9abadc7872e0efd188d21c349dec2c5b95"
